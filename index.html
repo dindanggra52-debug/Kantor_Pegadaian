@@ -12,8 +12,8 @@
       scroll-behavior: smooth;
     }
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                  url("Pegadaian.jpg") 
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url("Pegadaian.jpg")
                   no-repeat center center/cover;
       color: white;
       height: 100vh;
@@ -25,28 +25,24 @@
       font-size: 3rem;
       font-weight: bold;
     }
-    .services .card, .misi .card {
+    .services .card, .misi .card, .fasilitas .card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: white;
+      color: #fff;
     }
-    .services .card:hover, .misi .card:hover {
+    .services .card:hover, .misi .card:hover, .fasilitas .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-    /* warna berbeda tiap card */
-    .card-1 { background: linear-gradient(135deg, #2e7d32, #66bb6a); }
-    .card-2 { background: linear-gradient(135deg, #00695c, #26a69a); }
-    .card-3 { background: linear-gradient(135deg, #33691e, #8bc34a); }
-    .card-4 { background: linear-gradient(135deg, #1b5e20, #43a047); }
-    .card-5 { background: linear-gradient(135deg, #004d40, #26a69a); }
-    .card-6 { background: linear-gradient(135deg, #558b2f, #9ccc65); }
-    .card-7 { background: linear-gradient(135deg, #2e7d32, #81c784); }
-    .card-8 { background: linear-gradient(135deg, #1b5e20, #66bb6a); }
     #tentang p {
       line-height: 1.8;
       margin-bottom: 1rem;
       text-align: center;
     }
+    /* warna background berbeda */
+    .bg-1 { background: #388e3c; }
+    .bg-2 { background: #00796b; }
+    .bg-3 { background: #5d4037; }
+    .bg-4 { background: #1976d2; }
     footer {
       background: #004d40;
       color: white;
@@ -58,6 +54,14 @@
     }
     footer a:hover {
       text-decoration: underline;
+    }
+    /* Animasi fade-in untuk alert */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+    .fade-in.show {
+      opacity: 1;
     }
   </style>
 </head>
@@ -75,6 +79,7 @@
           <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
           <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
           <li class="nav-item"><a class="nav-link" href="#visi">Visi & Misi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fasilitas">Fasilitas</a></li>
           <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
         </ul>
       </div>
@@ -86,7 +91,8 @@
     <div class="container">
       <h1>Selamat Datang di Pegadaian</h1>
       <p class="lead">Mitra terpercaya untuk solusi keuangan Anda</p>
-      <a href="#layanan" class="btn btn-success btn-lg mt-3">Lihat Layanan Kami</a>
+      <!-- sudah diarahkan ke #tentang -->
+      <a href="#tentang" class="btn btn-success btn-lg mt-3">Lihat Tentang Kami</a>
     </div>
   </section>
 
@@ -100,16 +106,16 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <p>
-            Pegadaian adalah lembaga keuangan terpercaya yang hadir lebih dari satu abad 
-            untuk memberikan solusi keuangan cepat, mudah, aman, dan berbasis syariah. 
+            Pegadaian adalah lembaga keuangan terpercaya yang hadir lebih dari satu abad
+            untuk memberikan solusi keuangan cepat, mudah, aman, dan berbasis syariah.
           </p>
           <p>
-            Kami berkomitmen mendukung masyarakat Indonesia dalam memenuhi kebutuhan finansial 
-            melalui layanan gadai, investasi emas, dan pembiayaan usaha. Dengan jaringan luas 
+            Kami berkomitmen mendukung masyarakat Indonesia dalam memenuhi kebutuhan finansial
+            melalui layanan gadai, investasi emas, dan pembiayaan usaha. Dengan jaringan luas
             di seluruh Indonesia, Pegadaian menjadi mitra terpercaya yang selalu hadir di tengah masyarakat.
           </p>
           <p>
-            Selain layanan keuangan, Pegadaian juga berperan aktif dalam mendukung program pemerintah 
+            Selain layanan keuangan, Pegadaian juga berperan aktif dalam mendukung program pemerintah
             terkait inklusi keuangan, pemberdayaan UMKM, serta edukasi literasi keuangan bagi masyarakat luas.
           </p>
         </div>
@@ -123,38 +129,38 @@
       <h2 class="fw-bold mb-5">Layanan Kami</h2>
       <div class="row g-4">
         <div class="col-md-3">
-          <div class="card p-3 h-100 text-center border-0 shadow-sm card-1">
+          <div class="card p-3 h-100 text-center border-0 shadow-sm bg-1">
             <div class="card-body">
               <i class="bi bi-gem fs-1 mb-3"></i>
               <h5 class="card-title">Gadai Emas</h5>
-              <p class="card-text">Solusi cepat untuk kebutuhan dana dengan jaminan emas yang aman, terpercaya, dan proses mudah.</p>
+              <p class="card-text">Solusi cepat untuk kebutuhan dana dengan jaminan emas yang aman dan terpercaya.</p>
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card p-3 h-100 text-center border-0 shadow-sm card-2">
+          <div class="card p-3 h-100 text-center border-0 shadow-sm bg-2">
             <div class="card-body">
               <i class="bi bi-piggy-bank fs-1 mb-3"></i>
               <h5 class="card-title">Tabungan Emas</h5>
-              <p class="card-text">Investasi emas dengan nominal terjangkau, dapat dimulai dari jumlah kecil, cocok untuk semua kalangan.</p>
+              <p class="card-text">Investasi emas dengan nominal terjangkau, cocok untuk semua kalangan.</p>
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card p-3 h-100 text-center border-0 shadow-sm card-3">
+          <div class="card p-3 h-100 text-center border-0 shadow-sm bg-3">
             <div class="card-body">
               <i class="bi bi-briefcase fs-1 mb-3"></i>
               <h5 class="card-title">Pembiayaan Usaha</h5>
-              <p class="card-text">Dukungan modal usaha bagi UMKM dengan sistem mudah, cepat, transparan, dan sesuai kebutuhan bisnis.</p>
+              <p class="card-text">Dukungan modal usaha bagi UMKM dengan sistem mudah dan transparan.</p>
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card p-3 h-100 text-center border-0 shadow-sm card-4">
+          <div class="card p-3 h-100 text-center border-0 shadow-sm bg-4">
             <div class="card-body">
               <i class="bi bi-cash-coin fs-1 mb-3"></i>
               <h5 class="card-title">Pembiayaan Multiguna</h5>
-              <p class="card-text">Fasilitas pinjaman multiguna untuk berbagai keperluan finansial keluarga Anda dengan bunga ringan.</p>
+              <p class="card-text">Fasilitas pinjaman multiguna untuk kebutuhan finansial keluarga Anda.</p>
             </div>
           </div>
         </div>
@@ -167,45 +173,77 @@
     <div class="container text-center">
       <h2 class="fw-bold mb-4">Visi & Misi</h2>
       <p class="fs-5"><strong>Visi:</strong> Menjadi perusahaan keuangan paling bernilai di Indonesia dan agen inklusi keuangan pilihan utama masyarakat.</p>
-      
       <h4 class="fw-bold mt-5 mb-4">Misi Kami</h4>
       <div class="row g-4 misi">
         <div class="col-md-3">
-          <div class="card h-100 shadow border-0 card-5">
+          <div class="card h-100 shadow border-0 bg-1">
             <div class="card-body">
               <i class="bi bi-shield-check fs-2 mb-3"></i>
               <h5 class="card-title">Misi 1</h5>
-              <p class="card-text">Memberikan solusi keuangan yang cepat, aman, terpercaya, dan sesuai prinsip syariah maupun konvensional.</p>
+              <p class="card-text">Memberikan solusi keuangan yang cepat, aman, terpercaya, sesuai syariah maupun konvensional.</p>
             </div>
           </div>
         </div>
-        
         <div class="col-md-3">
-          <div class="card h-100 shadow border-0 card-6">
+          <div class="card h-100 shadow border-0 bg-2">
             <div class="card-body">
               <i class="bi bi-people fs-2 mb-3"></i>
               <h5 class="card-title">Misi 2</h5>
-              <p class="card-text">Memberdayakan usaha mikro, kecil, dan menengah untuk meningkatkan kesejahteraan masyarakat.</p>
+              <p class="card-text">Memberdayakan UMKM untuk meningkatkan kesejahteraan masyarakat.</p>
             </div>
           </div>
         </div>
-        
         <div class="col-md-3">
-          <div class="card h-100 shadow border-0 card-7">
+          <div class="card h-100 shadow border-0 bg-3">
             <div class="card-body">
               <i class="bi bi-globe fs-2 mb-3"></i>
               <h5 class="card-title">Misi 3</h5>
-              <p class="card-text">Mendukung program pemerintah dalam inklusi keuangan dan literasi keuangan masyarakat Indonesia.</p>
+              <p class="card-text">Mendukung program pemerintah dalam inklusi dan literasi keuangan.</p>
             </div>
           </div>
         </div>
-
         <div class="col-md-3">
-          <div class="card h-100 shadow border-0 card-8">
+          <div class="card h-100 shadow border-0 bg-4">
             <div class="card-body">
               <i class="bi bi-heart fs-2 mb-3"></i>
               <h5 class="card-title">Misi 4</h5>
-              <p class="card-text">Membangun kepercayaan masyarakat dengan pelayanan profesional, transparan, dan penuh integritas.</p>
+              <p class="card-text">Membangun kepercayaan masyarakat dengan pelayanan profesional dan transparan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fasilitas -->
+  <section id="fasilitas" class="fasilitas py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">Fasilitas Kantor</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow border-0 bg-1">
+            <div class="card-body">
+              <i class="bi bi-building fs-1 mb-3"></i>
+              <h5 class="card-title">Ruang Layanan</h5>
+              <p class="card-text">Ruang nyaman dan modern untuk melayani nasabah dengan cepat dan profesional.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow border-0 bg-2">
+            <div class="card-body">
+              <i class="bi bi-laptop fs-1 mb-3"></i>
+              <h5 class="card-title">Sistem Digital</h5>
+              <p class="card-text">Dukungan teknologi terkini untuk mempercepat proses transaksi dan pelayanan.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow border-0 bg-3">
+            <div class="card-body">
+              <i class="bi bi-person-workspace fs-1 mb-3"></i>
+              <h5 class="card-title">SDM Profesional</h5>
+              <p class="card-text">Tim profesional berpengalaman untuk memberikan layanan terbaik kepada masyarakat.</p>
             </div>
           </div>
         </div>
@@ -215,11 +253,42 @@
 
   <!-- Kontak -->
   <section id="kontak" class="py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-4">Kontak Kami</h2>
-      <p>Hubungi kami untuk informasi lebih lanjut mengenai layanan Pegadaian.</p>
-      <p><strong>Email:</strong> info@pegadaian.co.id | <strong>Telp:</strong> (021) 1234567</p>
-      <a href="mailto:info@pegadaian.co.id" class="btn btn-success">Kirim Email</a>
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Kontak Kami</h2>
+        <p class="text-muted">Hubungi kami untuk informasi lebih lanjut</p>
+        <!-- Alert sukses -->
+        <div id="alertSuccess" class="alert alert-success d-none fade-in" role="alert">
+          Pesan Anda berhasil dikirim!
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Alamat</h5>
+          <p>Jl. Pegadaian No.123, Jakarta, Indonesia</p>
+          <h5>Email</h5>
+          <p>info@pegadaian.co.id</p>
+          <h5>Telepon</h5>
+          <p>(021) 1234567</p>
+        </div>
+        <div class="col-md-6">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Pesan</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Tulis pesan Anda" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -228,12 +297,36 @@
     <div class="container text-center">
       <p>&copy; 2025 Pegadaian. All Rights Reserved.</p>
       <p>
-        <a href="#">Privacy Policy</a> | 
+        <a href="#">Privacy Policy</a> |
         <a href="#">Terms & Conditions</a>
       </p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Script untuk form kontak
+    const contactForm = document.getElementById("contactForm");
+    const alertSuccess = document.getElementById("alertSuccess");
+
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault(); // cegah reload
+      // tampilkan alert sukses dengan animasi fade-in
+      alertSuccess.classList.remove("d-none");
+      setTimeout(() => {
+        alertSuccess.classList.add("show");
+      }, 10);
+      alertSuccess.scrollIntoView({ behavior: "smooth" });
+      // reset form
+      contactForm.reset();
+      // auto-hide setelah 4 detik
+      setTimeout(() => {
+        alertSuccess.classList.remove("show");
+        setTimeout(() => {
+          alertSuccess.classList.add("d-none");
+        }, 800);
+      }, 4000);
+    });
+  </script>
 </body>
 </html>
